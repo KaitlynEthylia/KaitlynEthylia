@@ -13,6 +13,10 @@ alias py="doas pacman -Syyu"
 alias rb="doas reboot"
 alias sd="doas shutdown now"
 
-alias ..="cd .."
-alias .c="cd ~/KaitlynEthylia"
-alias ~="cd ~"
+alias c="z"
+alias ci="zi"
+
+alias ..="c .."
+alias .c="c ~/.config"
+alias ~="c ~"
+alias -="c -"
