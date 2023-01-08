@@ -5,6 +5,7 @@ set previewer ~/.config/lf/preview
 set shell sh
 
 set icons true
+set hidden
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -61,7 +62,6 @@ cmd trash %set -f; mv $fx ~/.trash
 # define a custom 'delete' command
  cmd delete ${{
      set -f
-     printf "$fx\n"
      printf "delete?[y/n]"
      read ans
      [ "$ans" = "y" ] && rm -rf $fx
@@ -101,4 +101,15 @@ cmd zip ${{
     cp -r $fx $1
     zip -r $1.zip $1
     rm -rf $1
+}}
+
+
+cmd z %{{
+	result='$(zoxide query --exclude )"${PWD}" -- "$@")'
+	lf -remote "send ${id} cd '${result}'"
+}}
+
+cmd zi %{{
+	result='$(zoxide query -i -- "$@")'
+	lf -remote "send ${id} cd '${result}'"
 }}
