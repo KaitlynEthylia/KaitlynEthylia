@@ -52,7 +52,7 @@ format = '[$branch$symbol ]($style)'
 
 [git_status]
 style = "cyan"
-format = '[\([$all_status$ahead_behind](bright-red)\)]($style)'
+format = '[(\([$all_status$ahead_behind](bright-red)\))]($style)'
 
 [haskell]
 symbol = " "
