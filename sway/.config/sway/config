@@ -14,11 +14,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu bemenu-run -H 26 -p "                           " -i --fn "CaskdaydiaCove Nerd Font Mono Semi-Bold 12" --tb=#00000000" --fb="#00000000" --nb="#00000000" --hb="#00000000" --an="#00000000" --ff="#FFFFFF" --cf="#00000000" --nf="#FFFFFF" --hf="#FEC4FF" | xargs swaymsg exec
 
 ### Output configuration
 #
