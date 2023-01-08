@@ -1,0 +1,8 @@
+CONFIG="$HOME/.config"
+
+# lfcd command
+LFCD="$CONFIG/lf/lfcd.sh"
+if [ -f "$LFCD" ]; then
+	source $LFCD
+	bindkey -s '^f' 'lfcd\n'
+fi

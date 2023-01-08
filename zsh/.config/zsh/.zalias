@@ -1,0 +1,18 @@
+alias ls="exa -la --group-directories-first"
+alias lg="ls --git"
+alias tree="ls --tree"
+
+alias lf="~/.config/lf/lfrun"
+
+alias v="nvim"
+
+alias pm="doas pacman -S"
+alias pr="doas pacman -Rscn"
+alias py="doas pacman -Syyu"
+
+alias rb="doas reboot"
+alias sd="doas shutdown now"
+
+alias ..="cd .."
+alias .c="cd ~/KaitlynEthylia"
+alias ~="cd ~"
