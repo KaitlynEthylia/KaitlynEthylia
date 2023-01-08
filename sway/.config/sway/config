@@ -15,10 +15,10 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu bemenu-run -H 26 -p "                           " -i --fn "CaskdaydiaCove Nerd Font Mono Semi-Bold 12" --tb=#00000000" --fb="#00000000" --nb="#00000000" --hb="#00000000" --an="#00000000" --ff="#FFFFFF" --cf="#00000000" --nf="#FFFFFF" --hf="#FEC4FF" | xargs swaymsg exec
+set $browser firefox
+set $screencap 'grim -g "$(slurp)" ~/Screenshots/$(date +%Y_%B_%d_%Hh_%Mm_%Ss).png'
+set $screencopy 'grim -g "$(slurp)" - | wl-copy'
 
 ### Output configuration
 #
@@ -73,7 +73,10 @@ input type:keyboard {
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start your launcher
+    bindsym $mod+q exec $term
+    bindsym $mod+f exec $browser
+    bindsym $mod+s exec $screencopy
+    bindsym $mod+Shift+s exec $screencap
     bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -148,13 +151,8 @@ input type:keyboard {
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
-
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+Shift+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
