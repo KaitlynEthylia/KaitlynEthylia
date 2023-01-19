@@ -8,7 +8,7 @@ alias v="nvim"
 
 alias pm="doas pacman -S"
 alias pr="doas pacman -Rscn"
-alias py="doas pacman -Syyu"
+alias py="doas pacman -Syu"
 
 alias rb="doas reboot"
 alias sd="doas shutdown now"
@@ -17,5 +17,4 @@ alias c="z"
 alias ci="zi"
 
 alias ..="c .."
-alias .c="c ~/.config"
 alias ~="c ~"

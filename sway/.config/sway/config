@@ -27,6 +27,8 @@ output * bg ~/Pictures/background.jpg fill
 
 input type:keyboard {
     xkb_layout gb
+	xkb_variant colemak_dh
+	xkb_options caps:backspace
 }
 
 
