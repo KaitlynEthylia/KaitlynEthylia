@@ -2,8 +2,6 @@ alias ls="exa -la --group-directories-first"
 alias lg="ls --git"
 alias tree="ls --tree"
 
-alias lf="~/.config/lf/lfrun"
-
 alias v="nvim"
 
 alias pm="doas pacman -S"
