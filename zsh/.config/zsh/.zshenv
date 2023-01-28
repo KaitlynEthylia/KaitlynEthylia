@@ -5,4 +5,6 @@ export GPG_TTY=$(tty)
 export EDITOR=nvim
 
 path+=("$HOME/.local/bin")
+path+=("$HOME/go/bin")
 export PATH
+. "$HOME/.cargo/env"
