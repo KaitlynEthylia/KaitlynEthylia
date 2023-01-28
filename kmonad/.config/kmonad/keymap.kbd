@@ -1,0 +1,56 @@
+(defcfg
+	input (device-file "/dev/input/by-id/usb-SEMICO_USB_Gaming_Keyboard-event-kbd")
+	output (uinput-sink "Kmonad")
+
+	fallthrough true
+)
+
+(defalias
+	num (layer-toggle numpad)
+	uti (layer-toggle utils)
+  	
+	cpy C-c
+  	pst C-v
+  	cut C-x
+
+	vcp #(S-2 + y)
+	vps #(S-2 + p)
+
+	dwd C-bspc
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn
+  caps a    s    d    f    g    h    j    k    l    ;    '     
+  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft            up
+  lctl lmet lalt           spc                 ralt      cmp  rctl       left down rght
+)
+
+(deflayer main
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    ret   del  end  pgdn
+  bspc a    r    s    t    g    m    n    e    i    o    '     
+  lsft z    x    c    d    v    102d k    h    ,    .    /    rsft            up
+  lctl lmet lalt           spc                 @uti      cmp  @num       left down rght
+)
+
+(deflayer numpad
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    0    7    8    9    *    /    _    _    _    _    _    _    _     _    _    _
+  _    .    4    5    6    +    -    ins  home pgup _    _     
+  _    =    1    2    3    \(   \)   del  end  pgdn _    _    _               _
+  _    _    _              _                   ralt      _    _          _    _    _
+)
+
+(deflayer utils
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @dwd  _    _    _
+  _    _    _    _    @vps _    _    _    _    @vcp _    _    _    _     _    _    _
+  @dwd h    j    k    l    _    _    ins  home pgup _    _     
+  _    _    @cut @cpy @dwd @pst _    del  end  pgdn _    _    _               _
+  _    _    _              _                   _         _    rctl       _    _    _
+)
