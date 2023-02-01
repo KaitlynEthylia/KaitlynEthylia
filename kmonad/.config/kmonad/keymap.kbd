@@ -7,50 +7,107 @@
 
 (defalias
 	num (layer-toggle numpad)
-	uti (layer-toggle utils)
-  	
+	qnm (layer-toggle quick_numpad)
+	fun (layer-toggle function)
+	sym (layer-toggle symbols)
+	ext (layer-toggle extended)
+	nav (layer-toggle navigation)
+
+	anm (layer-add numpad)
+	rnm (layer-rem numpad)
+
+    00 0 ;; this is to stop kmonad from treating the 0 character as a time delay
+	nsw (multi-tap 200 1 200 2 200 3 200 4 200 5 200 6 200 7 200 8 200 9 @00)
+	tsf (around-next @sym) 
+	shd (tap-next @tsf sft) ;; act as shift when held, add symbol layer for next keypress if tapped
+
+	bcp (tap-next bspc @ext) ;; act as backspace when tapped, add extend layer when held
+
+	ps pause
+
+	ply play
+	rwd rewind
+	prv previoussong
+	nxt nextsong
+	rfs refresh
+
 	cpy C-c
   	pst C-v
   	cut C-x
+	udo C-z
+	all C-a
+	fnd C-f
+	bwd Back
+	fwd Forward
 
-	vcp #(S-2 + y)
-	vps #(S-2 + p)
+	vcp #(@dqt + y) ;; copy to global clipboard in vim
+	vps #(@dqt + p) ;; paste from global clipboard in vim
 
 	dwd C-bspc
+
+	dqt S-2 ;; "
+	pnd S-3 ;; £
 )
 
 (defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn
-  caps a    s    d    f    g    h    j    k    l    ;    '     
-  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft            up
-  lctl lmet lalt           spc                 ralt      cmp  rctl       left down rght
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    bspc 
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret  
+  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft 
+  lctl lmet lalt           spc                 ralt      cmp  rctl 
 )
 
 (deflayer main
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
-  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    ret   del  end  pgdn
-  bspc a    r    s    t    g    m    n    e    i    o    '     
-  lsft z    x    c    d    v    102d k    h    ,    .    /    rsft            up
-  lctl lmet lalt           spc                 @uti      cmp  @num       left down rght
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    bspc 
+  @bcp a    r    s    t    g    m    n    e    i    o    '    ret  
+  @shd z    x    c    d    v    102d k    h    ,    .    /    rsft 
+  lctl lmet lalt           spc                 @nav      cmp  @anm 
 )
 
 (deflayer numpad
-  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    0    7    8    9    *    /    _    _    _    _    _    _    _     _    _    _
-  _    .    4    5    6    +    -    ins  home pgup _    _     
-  _    =    1    2    3    \(   \)   del  end  pgdn _    _    _               _
-  _    _    _              _                   ralt      _    _          _    _    _
+  esc  _    A    B    C    +    _    7    8    9    _    _    _    _    
+  _    _    D    E    F    *    /    4    5    6    _    _    _    
+  _    _    .    =    _    _    _    0    1    2    3    _    _    
+  _    _    _              _                   _         _    @rnm
 )
 
-(deflayer utils
-  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    @dwd  _    _    _
-  _    _    _    _    @vps _    _    _    _    @vcp _    _    _    _     _    _    _
-  @dwd h    j    k    l    _    _    ins  home pgup _    _     
-  _    _    @cut @cpy @dwd @pst _    del  end  pgdn _    _    _               _
-  _    _    _              _                   _         _    rctl       _    _    _
+(deflayer quick_numpad
+  esc  1    2    3    4    5    6    7    8    9    0    _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _              _                   _         _    _
+)
+
+(deflayer function
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _ 
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _              _                   _         _    _
+)
+
+(deflayer symbols
+  `    !    @dqt @pnd $    %    ^    &    *    \(   \)   \_   +    _    
+  _    _    _    _    _    _    _    {    ;    _    _    -    =    
+  _    1    2    3    4    5    6    7    8    9    0    _    _    
+  _    _    _              _                   _         _    _
+)
+
+(deflayer extended
+  @nxt @prv @ply _    @vps _    _    _    _    @vcp _    _    _    _    
+  _    lsft lctl lmet lalt @bwd @fwd ralt rmet rctl rsft cmp  _
+  _    @udo @cut @cpy @dwd @pst _    _    tab  _    _    _    _ 
+  _    _    bspc           ret                 _         _    _
+)
+
+(deflayer navigation
+  esc  ssrq slck @ps  _    _    _    del  home pgup _    _    _    _    
+  _    left up   down rght _    _    ins  end  pgdn _    _    _    
+  _    @bwd _    _    @fwd _    _    _    @nsw _    _    _    @fun 
+  _    _    @qnm           _                   _         _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    
+  _    _    _              _                   _         _    _
 )
