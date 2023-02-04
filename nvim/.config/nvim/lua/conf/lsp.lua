@@ -1,23 +1,26 @@
-local lsp = require('lsp-zero')
+require('mason').setup()
 
-lsp.preset('recommended')
-
-lsp.ensure_installed({
-	'sumneko_lua',
-	'rust_analyzer',
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'sumneko_lua',
+		'rust_analyzer',
+	}
 })
 
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-Q>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
-})
+local lsp_attach = function(client, bufnr)
+	local opt = { buffer = bufnr, remap = false }
 
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-})
+	vim.g.mapleader = ' '
+	vim.keymap.set('n', 'gd', function () vim.lsp.buf.definition() end, opt)
+	vim.keymap.set('n', '<leader>s', function () vim.lsp.buf.hover() end, opt)
+	vim.keymap.set('n', '<leader>r', function () vim.lsp.buf.rename() end, opt)
+end
 
-lsp.setup()
+local lspconfig = require('lspconfig')
+require('mason-lspconfig').setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup({
+			on_attach = lsp_attach,
+		})
+	end
+})
