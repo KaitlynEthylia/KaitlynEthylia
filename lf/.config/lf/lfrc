@@ -92,11 +92,14 @@ cmd mk %{{
 
 map <c-n> push :mk<space>
 
+map zo zi
+
 map <enter> shell
 map <delete> delete
 
 map d delete
 map c cut
+map a clear
 
 map t trash
 

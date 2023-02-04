@@ -40,25 +40,25 @@
 	bwd Back
 	fwd Forward
 
-	vcp #(@dqt + y) ;; copy to global clipboard in vim
-	vps #(@dqt + p) ;; paste from global clipboard in vim
-
 	dwd C-bspc
 
 	dqt S-2 ;; "
 	pnd S-3 ;; £
+	
+	vcp #(@dqt + y) ;; copy to global clipboard in vim
+	vps #(@dqt + p) ;; paste from global clipboard in vim
 )
 
 (defsrc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    bspc 
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret  
+  caps a    s    d    f    g    h    j    k    l    ;    '    \  
   lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft 
   lctl lmet lalt           spc                 ralt      cmp  rctl 
 )
 
 (deflayer main
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    bspc 
-  @bcp a    r    s    t    g    m    n    e    i    o    '    ret  
+  @bcp a    r    s    t    g    m    n    e    i    o    '    \  
   @shd z    x    c    d    v    102d k    h    ,    .    /    rsft 
   lctl lmet lalt           spc                 @nav      cmp  @anm 
 )

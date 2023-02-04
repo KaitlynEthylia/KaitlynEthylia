@@ -1,1 +1,1 @@
-source $HOME/.config/kmonad/kmonad.sh
+# source $HOME/.config/kmonad/kmonad.sh

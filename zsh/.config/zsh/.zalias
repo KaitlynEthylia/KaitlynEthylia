@@ -16,3 +16,5 @@ alias ci="zi"
 
 alias ..="c .."
 alias ~="c ~"
+
+alias rsta="systemctl --user restart wireplumber.service pipewire.service pipewire.socket"
