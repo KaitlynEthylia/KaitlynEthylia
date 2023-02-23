@@ -1,4 +1,5 @@
 exec autotiling
+exec ~/Scripts/background.sh
 bar swaybar_command waybar
 
 default_border pixel 2
@@ -21,10 +22,8 @@ set $term kitty
 set $discordclient discord
 set $browser firefox
 set $menu 'bemenu-run -H 26 -p "                          " -i --fn "CaskaydiaCove Nerd Font Mono Semi-Bold 12" --tb="#00000000" --fb="#00000000" --nb="#00000000" --hb="#00000000" --ab="#00000000" --ff="#FFFFFF" --cf="#00000000" --nf="#FFFFFF" --hf="#FEC4FF" | xargs swaymsg exec'
-set $screencap 'grim -g "$(slurp)" ~/Screenshots/$(date +%Y_%B_%d_%Hh_%Mm_%Ss).png'
+set $screencap 'grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y_%B_%d_%Hh_%Mm_%Ss).png'
 set $screencopy 'grim -g "$(slurp)" - | wl-copy -t image/png'
-
-output * bg ~/Pictures/background.jpg fill
 
 input type:keyboard {
 	xkb_layout gb

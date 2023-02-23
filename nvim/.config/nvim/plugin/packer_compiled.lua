@@ -74,36 +74,74 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  colorizer = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/colorizer",
+    url = "https://github.com/lilydjwg/colorizer"
+  },
+  dracula = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/dracula",
+    url = "https://github.com/dracula/vim"
+  },
   ["kmonad-vim"] = {
     loaded = true,
     path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/kmonad-vim",
     url = "https://github.com/kmonad/kmonad-vim"
   },
   ["lf.vim"] = {
+    config = { "\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fconf.lf\frequire\0" },
     loaded = true,
     path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/lf.vim",
     url = "https://github.com/ptzz/lf.vim"
   },
   ["lualine.nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17conf.lualine\frequire\0" },
     loaded = true,
     path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["nvim-base16"] = {
+  ["mason-lspconfig"] = {
     loaded = true,
-    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/nvim-base16",
-    url = "https://github.com/RRethy/nvim-base16"
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/mason-lspconfig",
+    url = "https://github.com/williamboman/mason-lspconfig"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rconf.lsp\frequire\0" },
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20conf.treesitter\frequire\0" },
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
+  rosepine = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/rosepine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["vim-be-good"] = {
     loaded = true,
@@ -114,10 +152,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/kaitlyn/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rconf.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20conf.treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17conf.lualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: lf.vim
+time([[Config for lf.vim]], true)
+try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fconf.lf\frequire\0", "config", "lf.vim")
+time([[Config for lf.vim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -11,13 +11,13 @@ return require('packer').startup(function(use)
 	use {
 		'ptzz/lf.vim',
 		requires = 'voldikss/vim-floaterm',
-		config = require('conf.lf')
+		config = function() require('conf.lf') end
 	}
 
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
-		config = require('conf.lualine')
+		config = function() require('conf.lualine') end
 	}
 
 	use { 'rose-pine/neovim', as = 'rosepine' }
@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
-		config = require('conf.treesitter')
+		config = function() require('conf.treesitter') end
 	}
 
 	use 'airblade/vim-gitgutter'
@@ -35,7 +35,9 @@ return require('packer').startup(function(use)
 	use {
 		'neovim/nvim-lspconfig',
 		requires = {'williamboman/mason.nvim', 'williamboman/mason-lspconfig'},
-		config = require('conf.lsp')
+		config = function() require('conf.lsp') end
 	}
+
+	use 'lilydjwg/colorizer'
 end)
 

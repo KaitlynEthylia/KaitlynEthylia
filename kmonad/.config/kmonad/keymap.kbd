@@ -57,9 +57,9 @@
 )
 
 (deflayer main
-  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    bspc 
-  @bcp a    r    s    t    g    m    n    e    i    o    '    \  
-  @shd z    x    c    d    v    102d k    h    ,    .    /    rsft 
+  tab  q    w    f    p    b    [    j    l    u    y    '    \    bspc 
+  @bcp a    r    s    t    g    ]    m    n    e    i    o    ;  
+  @shd z    x    c    d    v    102d /    k    h    ,    .    rsft 
   lctl lmet lalt           spc                 @nav      cmp  @anm 
 )
 
@@ -71,7 +71,7 @@
 )
 
 (deflayer quick_numpad
-  esc  1    2    3    4    5    6    7    8    9    0    _    _    _    
+  esc  1    2    3    4    5    _    6    7    8    9    0    _    _    
   _    _    _    _    _    _    _    _    _    _    _    _    _    
   _    _    _    _    _    _    _    _    _    _    _    _    _    
   _    _    _              _                   _         _    _
@@ -93,14 +93,14 @@
 
 (deflayer extended
   @nxt @prv @ply _    @vps _    _    _    _    @vcp _    _    _    _    
-  _    lsft lctl lmet lalt @bwd @fwd ralt rmet rctl rsft cmp  _
+  _    lsft lctl lmet lalt @bwd _    @fwd ralt rmet rctl rsft cmp
   _    @udo @cut @cpy @dwd @pst _    _    tab  _    _    _    _ 
   _    _    bspc           ret                 _         _    _
 )
 
 (deflayer navigation
-  esc  ssrq slck @ps  _    _    _    del  home pgup _    _    _    _    
-  _    left up   down rght _    _    ins  end  pgdn _    _    _    
+  esc  ssrq slck @ps  _    _    _    _    del  home pgup _    _    _    
+  bspc left up   down rght _    _    _    ins  end  pgdn _    _    
   _    @bwd _    _    @fwd _    _    _    @nsw _    _    _    @fun 
   _    _    @qnm           _                   _         _    _
 )

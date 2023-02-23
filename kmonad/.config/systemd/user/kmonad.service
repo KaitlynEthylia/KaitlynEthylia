@@ -1,0 +1,8 @@
+[Unit]
+Description=Kmonad keyboard manager service
+
+[Service]
+ExecStart=/home/kaitlyn/.local/bin/kmonad /home/kaitlyn/.config/kmonad/keymap.kbd
+
+[Install]
+WantedBy=default.target
