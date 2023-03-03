@@ -1,8 +1,8 @@
-#======================
+# =====================
 #
 #        SETUP
 #
-#======================
+# =====================
 
 Set-Location -Path $env:USERPROFILE\Documents
 
@@ -32,11 +32,11 @@ pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-hos
 # download configs
 git clone https://github.com/KaitlynEthylia/KaitlynEthylia
 
-#======================
+# =====================
 #
 #     COPY CONFIGS
 #
-#======================
+# =====================
 
 # configure autohotkey
 Copy-Item '.\KaitlynEthylia\windows\autohotkey-shortcut.lnk' -Destination "${env:APPDATA}\Microsoft\Windows\Start Menu\Programs\Startup" -Force
@@ -65,11 +65,11 @@ Copy-Item '.\KaitlynEthylia\lf\.config\lf' -Destination $env:LOCALAPPDATA -Recur
 mkdir "${env:USERPROFILE}\.config"
 Copy-Item '.\KaitlynEthylia\hyfetch\hyfetch.json' -Destination "${env:USERPROFILE}\.config"
 
-#======================
+# =====================
 #
 #   WINDOWS SETTINGS
 #
-#======================
+# =====================
 
 # taskbar settings
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarSmallIcons -Value 1 -Force
