@@ -8,8 +8,8 @@ gaps inner 4
 client.focused #fec4ff #fec4ff #fec4ff #fec4ff #fec4ff
 client.unfocused #bbb0c2 #bbb0c2 #bbb0c2 #bbb0c2 #bbb0c2 
 
-assign [app_id="Kitty"] wookspace number 1
 assign [class="firefox"] workspace number 2
+assign [class="discord"] workspace number 3
 
 set $mod Mod4
 
@@ -20,7 +20,7 @@ set $right l
 
 set $term kitty
 set $discordclient discord
-set $browser firefox
+set $browser firefox.sh
 set $menu 'bemenu-run -H 26 -p "                          " -i --fn "CaskaydiaCove Nerd Font Mono Semi-Bold 12" --tb="#00000000" --fb="#00000000" --nb="#00000000" --hb="#00000000" --ab="#00000000" --ff="#FFFFFF" --cf="#00000000" --nf="#FFFFFF" --hf="#FEC4FF" | xargs swaymsg exec'
 set $screencap 'grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y_%B_%d_%Hh_%Mm_%Ss).png'
 set $screencopy 'grim -g "$(slurp)" - | wl-copy -t image/png'

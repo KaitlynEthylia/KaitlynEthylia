@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-export USER="kaitlyn"
-export HOME="/home/$USER"
-
-groups="$(id -Gn "$USER" | tr ' ' ':')"
-svdir="$HOME/.service"
-
-exec chpst -u "$USER:$groups" runsvdir "$svdir"

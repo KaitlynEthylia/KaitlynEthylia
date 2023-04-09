@@ -1,0 +1,4 @@
+Add to rustfmt.toml
+Create Cargo.generate template
+Modify Kmonad layout
+Go through Kitty config

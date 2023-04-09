@@ -9,3 +9,7 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 source $HOME/Clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#[ -f "/home/kaitlyn/.home/.ghcup/env" ] && source "/home/kaitlyn/.home/.ghcup/env" # ghcup-env
+#[ -f "/home/kaitlyn/.home/.ghcup/env" ] && source "/home/kaitlyn/.home/.ghcup/env" # ghcup-env
+[ -f "/home/kaitlyn/.local/.share/ghcup/env" ] && source "/home/kaitlyn/.local/.share/ghcup/env" # ghcup-env

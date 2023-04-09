@@ -7,9 +7,13 @@ OnAttach = function(_, _)
 
 	map('n', '<leader>gd', vim.lsp.buf.definition)
 	map('n', '<leader>gi', vim.lsp.buf.implementation)
-	if telescope_status then map('n', '<leader>gr', builtin.lsp_references) end
+	if telescope_status then
+		map('n', '<leader>gr', builtin.lsp_references)
+	end
 
-	if CustomOnAttach then for _,v in pairs(CustomOnAttach) do v() end end
+	if CustomOnAttach then for _, v in pairs(CustomOnAttach) do v() end end
+
+	vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 end
 
 Settings = {

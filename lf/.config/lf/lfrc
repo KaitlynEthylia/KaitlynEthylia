@@ -43,6 +43,19 @@ cmd delete %{{
     [ "$ans" = "y" ] && rm -rf $fx
 }}
 
+cmd chmodx %{{
+	set -f
+	for file in $fx; do
+		if [ -x $file ]; then
+			chmod -x $file
+		else
+			chmod +x $file
+		fi
+	done
+	lf -remote 'send reload'
+	lf -remote 'send unselect'
+}}
+
 cmd extract ${{
     set -f
     case $f in
@@ -106,8 +119,9 @@ map t trash
 map f tar
 map F extract
 
-map x $$f
 map X !$f
+
+map x chmodx
 
 map o &mimeopen $f
 map O $mimeopen --ask $f

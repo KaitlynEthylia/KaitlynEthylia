@@ -1,0 +1,3 @@
+hard_tabs = true
+format_doce_in_doc_comments = true
+edition = "2021"

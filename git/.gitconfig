@@ -1,0 +1,10 @@
+[user]
+	name = KaitlynEthylia
+	email = kaitlyyn.ethylia@proton.me
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = mistress
+[core]
+	autocrlf = false
+	eol = lf
