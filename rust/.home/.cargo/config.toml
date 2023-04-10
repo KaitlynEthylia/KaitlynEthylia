@@ -1,0 +1,6 @@
+[alias]
+gen = "generate"
+gens = "gen simple"
+genn = "gens -n"
+genb = "gens -d test=false -d cratetype=bin -n"
+genl = "gens -d test=true -d cratetype=lib -n"

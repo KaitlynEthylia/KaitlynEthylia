@@ -1,0 +1,3 @@
+[favorites.simple]
+git = "https://github.com/KaitlynEthylia/rust-template"
+description = "Simple rust template with minor tweaks for personal use"
