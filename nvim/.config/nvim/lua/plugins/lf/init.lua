@@ -1,7 +1,11 @@
 return {
 	{
-		'ptzz/lf.vim',
-		dependencies = 'vim-floaterm',
+		'lmburns/lf.nvim',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'akinsho/toggleterm.nvim'
+		},
 		config = function() require('plugins.lf.conf') end,
+		lazy = false,
 	},
 }

@@ -114,7 +114,7 @@ map d delete
 map c cut
 map a clear
 
-map E $kitty @launch --type=tab $EDITOR $f
+map E $kitty @launch --type=tab --cwd=current $EDITOR $f
 map t trash
 
 map f tar

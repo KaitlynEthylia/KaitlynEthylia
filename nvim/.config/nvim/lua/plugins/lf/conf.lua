@@ -1,6 +1,11 @@
-vim.g.lf_map_keys = 0
+vim.g.lf_netrw = 1
 
-vim.g.lf_width = 0.9
-vim.g.lf_height = 0.9
+require('lf').setup {
+	default_actions = {},
+	height = 0.9,
+	width = 0.9,
+	border = 'rounded',
+}
 
 map('n', '<leader>l', ':Lf<CR>')
+map('n', '<leader>c', ':Lf ~/.config/nvim/lua<CR>')
