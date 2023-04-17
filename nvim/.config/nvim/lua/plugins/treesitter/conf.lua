@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-	ensure_installed = { 'c', 'lua', 'vim', 'help', 'rust', 'kotlin'},
+	ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'rust', 'kotlin'},
 
 	auto_install = true,
 	highlight = {
