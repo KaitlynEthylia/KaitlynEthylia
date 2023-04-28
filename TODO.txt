@@ -1,3 +1,5 @@
-Add to rustfmt.toml
-Modify Kmonad layout
-Go through Kitty config
+Hyprland Config
+Waybar Config
+Rofi?
+README
+Windows Nvim

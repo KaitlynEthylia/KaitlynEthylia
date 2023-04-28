@@ -17,4 +17,6 @@ alias ci="zi"
 alias ..="c .."
 alias ~="c ~"
 
+alias d!='doas $(fc -lrn | head -1)'
+
 alias rsta="systemctl --user restart wireplumber.service pipewire.service pipewire.socket"
