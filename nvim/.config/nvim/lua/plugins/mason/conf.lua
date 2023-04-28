@@ -3,7 +3,6 @@ require('mason-lspconfig').setup {
 	ensure_installed = {
 		"lua_ls",
 		"rust_analyzer",
-		"hls",
 		"kotlin_language_server"
 	},
 }
