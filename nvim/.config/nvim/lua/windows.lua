@@ -1,5 +1,5 @@
-if vim.fn.has("win32") then
-	vim.o.shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
+if vim.fn.has("win32") ~= 0 then
+	vim.o.shell = "powershell"
 	vim.o.shellcmdflag =
 	"-NoLogo -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
 	vim.o.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
