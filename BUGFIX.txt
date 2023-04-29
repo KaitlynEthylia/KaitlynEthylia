@@ -1,0 +1,2 @@
+Lf.nvim
+LF on windows

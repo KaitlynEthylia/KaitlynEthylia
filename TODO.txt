@@ -1,5 +1,4 @@
-Hyprland Config
-Waybar Config
-Rofi?
-README
-Windows Nvim
+Redo Waybar Config
+Maybe use Rofi?
+Make README not quite so ugly
+Fix nvim on windows

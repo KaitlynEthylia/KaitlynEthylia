@@ -1,5 +1,5 @@
 exec autotiling
-exec ~/Scripts/background.sh
+exec ~/Scripts/randbg-sway.sh
 bar swaybar_command waybar
 
 default_border pixel 2
