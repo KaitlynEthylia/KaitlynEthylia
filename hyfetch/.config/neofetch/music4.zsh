@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 
 red=$(tput setaf 9)
 green=$(tput setaf 10)

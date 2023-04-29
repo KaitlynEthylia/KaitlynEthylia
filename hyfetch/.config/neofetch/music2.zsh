@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 yellow=$(tput setaf 11)
 magenta=$(tput setaf 13)
 white=$(tput setaf 15)

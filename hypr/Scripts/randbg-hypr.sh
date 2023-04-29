@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 Backgrounds=(~/Pictures/Backgrounds/*)
 file=$((0 + RANDOM % ${#Backgrounds[@]}))
 path=${Backgrounds[$file]}
