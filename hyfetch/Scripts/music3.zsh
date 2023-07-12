@@ -18,7 +18,7 @@ shuffle=$(case $rawShuffle in
 esac)
 
 rawStatus=$(playerctl --player $rawPlayer status)
-status=$(case $rawStatus in
+_status=$(case $rawStatus in
 	Paused) 
 		echo "契";;
 	*)
@@ -37,4 +37,4 @@ loop=$(case $rawLoop in
 		echo "  ";;
 esac)
 
-printf "$white$shuffle $bold玲$status怜$normal $loop"
+printf "$white$shuffle $bold玲$_status怜$normal $loop"

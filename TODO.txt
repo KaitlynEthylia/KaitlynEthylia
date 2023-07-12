@@ -1,4 +1,0 @@
-Redo Waybar Config
-Maybe use Rofi?
-Make README not quite so ugly
-Fix nvim on windows

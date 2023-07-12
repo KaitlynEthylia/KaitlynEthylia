@@ -1,0 +1,12 @@
+max-history=5
+on-button-middle=dismiss-all
+font=CaskaydiaCove Nerd Font Mono SemiBold 9
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-size=1
+border-color=#ffbbee
+border-radius=10
+icon-location=right
+text-alignment=right
+default-timeout=5000
+progress-color=source #b4befe

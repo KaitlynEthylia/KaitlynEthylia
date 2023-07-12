@@ -50,6 +50,7 @@ fi             # FILE
 *.mdx           
 *.markdown      
 *.rmd           
+*.org           
 *.json          
 *.webmanifest   
 *.js            

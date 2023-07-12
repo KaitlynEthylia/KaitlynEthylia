@@ -59,7 +59,7 @@ shuffle=$(case $rawShuffle in
 esac)
 
 rawStatus=$(playerctl --player $rawPlayer status)
-status=$(case $rawStatus in
+_status=$(case $rawStatus in
 	Paused) 
 		echo "\uf909";;
 	*)
@@ -100,6 +100,6 @@ volume+=$white
 printf "$player$white:
 $blue$bold$title$normal$white - $blue$bold$artist\n
   $yellow$positionMinutes$white:$yellow%02d $progress $yellow$lengthMinutes$white:$yellow%02d
-      $white$shuffle $bold\uf9ad$status\uf9ac$normal $loop
+      $white$shuffle $bold\uf9ad$_status\uf9ac$normal $loop
    $volume
 " $positionSeconds $lengthSeconds
