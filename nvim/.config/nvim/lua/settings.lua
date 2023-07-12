@@ -15,4 +15,4 @@ opt.wrap = false
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.scrolloff = 5
+opt.scrolloff = 50

@@ -1,5 +1,14 @@
 local cmp = require('cmp')
-local snippets = require('plugins.snippets.exp')
+local luasnip = require('luasnip')
+local snippets = {
+	settings = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	source = 'luasnip',
+	engine = luasnip,
+}
 
 cmp.setup {
 	snippet = snippets.settings,
@@ -10,19 +19,24 @@ cmp.setup {
 		["<C-s>"] = cmp.mapping.scroll_docs(1),
 		["<C-Space>"] = cmp.mapping.confirm { select = true },
 		["<C-e>"] = cmp.mapping.abort(),
-
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then cmp.select_next_item()
-			elseif snippets.engine.expandable() then snippets.engine.expand()
-			elseif snippets.engine.expand_or_jumpable() then snippets.engine.expand_or_jump()
-			else fallback()
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif snippets.engine.expandable() then
+				snippets.engine.expand()
+			elseif snippets.engine.expand_or_jumpable() then
+				snippets.engine.expand_or_jump()
+			else
+				fallback()
 			end
 		end, { 'i', 's' }),
-
 		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then cmp.select_prev_item()
-			elseif snippets.engine.jumpable(-1) then snippets.engine.jump(-1)
-			else fallback()
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif snippets.engine.jumpable(-1) then
+				snippets.engine.jump(-1)
+			else
+				fallback()
 			end
 		end, { 'i', 's' }),
 	},
@@ -38,7 +52,7 @@ cmp.setup {
 		},
 	},
 	formatting = {
-		fields = {'kind', 'abbr', 'menu' },
+		fields = { 'kind', 'abbr', 'menu' },
 		format = function(entry, vim_item)
 			vim_item.kind = string.format("%s", require('plugins.cmp.icons')[vim_item.kind])
 			vim_item.menu = ({
@@ -51,4 +65,3 @@ cmp.setup {
 		end,
 	},
 }
-
