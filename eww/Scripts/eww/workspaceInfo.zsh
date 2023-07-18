@@ -22,7 +22,7 @@ case $1 in
 	get)
 		spaces
 		socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | 
-			while read or line; do
+			while read -r line; do
 				spaces
 			done;;
 	active)

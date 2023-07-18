@@ -22,20 +22,6 @@ cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 cmd trash %set -f; mv $fx ~/.trash
 
-cmd delete %{{
-    set -f
-    printf "delete? (y/N):"
-    read ans
-    [ "$ans" = "y" ] && for file in $fx; do
-		case $file in
-			*.config|*.local|*.home|*KaitlynEthylia)
-				printf "\nYou cannot delete $file from LF. If you really want to delete them, do so from the command line";;
-			*)
-				rm -rf $file
-		esac
-	done
-}}
-
 cmd chmodx %{{
 	set -f
 	for file in $fx; do
@@ -97,29 +83,41 @@ cmd mk %{{
 	esac
 }}
 
+cmd delete %{{
+    set -f
+    printf "delete? (y/N):"
+    read ans
+    [ "$ans" = "y" ] && for file in $fx; do
+		case $file in
+			*.config|*.local|*.home|*KaitlynEthylia)
+				printf "\nYou cannot delete $file from LF. If you really want to delete them, do so from the command line";;
+			*)
+				rm -rf $file
+		esac
+	done
+}}
+
+cmd relink %{{
+	set -f
+	if [[ -L $f ]]; then
+	else
+	fi
+}}
+
 map <c-n> push :mk<space>
-
-map zo zi
-
+map zi zi
+map g/ cd /
 map <enter> shell
 map <delete> delete
-
 map d delete
 map c cut
 map a clear
-
 map E $kitty @launch --type=tab --cwd=current $EDITOR $f
 map t trash
-
 map f tar
 map F extract
-
 map X !$f
-
 map x chmodx
-
 map o &mimeopen $f
 map O $mimeopen --ask $f
-
 map r push :rename<space>
-map R push :rename<space>$$f

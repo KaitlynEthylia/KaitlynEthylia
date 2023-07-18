@@ -16,3 +16,7 @@ opt.hlsearch = false
 opt.incsearch = true
 
 opt.scrolloff = 50
+
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevelstart = 99

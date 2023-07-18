@@ -4,32 +4,30 @@ case $1 in
 		nmcli -f IN-USE,SSID d w | grep '*' | sed 's/[\* ]//g' | cat
 		exit 0;;
 	strength)
-		case $(nmcli -f IN-USE,BARS d w |
-				grep '*' |
-				sed 's/[\* ]//g') in
-		▂▄▆█)
+		str=$(nmcli -f ACTIVE,BARS d w | grep 'yes')
+		case ${str: -5:-1} in
+		'****')
 			echo "󰤨";;
-		▂▄▆_)
+		'****')
 			echo "󰤥";;
-		▂▄__)
+		'**')
 			echo "󰤢";;
-		▂___)
+		'*')
 			echo "󰤟";;
 		*)
 			echo "󰤯";;
 		esac
 		exit 0;;
 	colour)
-		case $(nmcli -f IN-USE,BARS d w |
-				grep '*' |
-				sed 's/[\* ]//g') in
-		▂▄▆█)
+		str=$(nmcli -f ACTIVE,BARS d w | grep 'yes')
+		case ${str: -5:-1} in
+		'****')
 			echo "green";;
-		▂▄▆_)
+		'***')
 			echo "yellow";;
-		▂▄__)
+		'**')
 			echo "peach";;
-		▂___)
+		'*')
 			echo "maroon";;
 		*)
 			echo "red";;

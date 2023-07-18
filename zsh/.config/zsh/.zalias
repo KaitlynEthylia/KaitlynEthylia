@@ -22,3 +22,5 @@ alias d!='doas $(fc -lrn | head -1)'
 alias rsta="systemctl --user restart wireplumber.service pipewire.service pipewire.socket"
 alias ps="pactl set-default-sink"
 alias pv="pactl set-sink-volume @DEFAULT_SINK@"
+
+alias mj\'kac="systemctl restart --user kmonad"
