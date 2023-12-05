@@ -1,0 +1,3 @@
+[submodule "modules/home/lang/lua/conf/Projects/Love2D/luals-addons/love2d"]
+	path = modules/home/lang/lua/conf/Projects/Love2D/luals-addons/love2d
+	url = https://github.com/LuaCATS/love2d
